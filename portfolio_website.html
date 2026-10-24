@@ -1,0 +1,1182 @@
+<!DOCTYPE html>
+<html lang="id" class="dark scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fajar Ramdan Faidillah (@to.pjxr) | Fajar.Des Portfolio</title>
+    
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        slate: {
+                            950: '#0b0f19',
+                            900: '#0f172a',
+                            800: '#1e293b',
+                            700: '#334155'
+                        },
+                        violet: {
+                            500: '#8b5cf6',
+                            600: '#7c3aed',
+                        },
+                        fuchsia: {
+                            500: '#d946ef',
+                            600: '#c026d3',
+                        },
+                        cyan: {
+                            400: '#22d3ee',
+                            500: '#06b6d4',
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Plus Jakarta Sans', 'Inter', 'sans-serif'],
+                    },
+                    keyframes: {
+                        float: {
+                            '0%, 100%': { transform: 'translateY(0px)' },
+                            '50%': { transform: 'translateY(-10px)' },
+                        },
+                        glow: {
+                            '0%, 100%': { opacity: '0.4' },
+                            '50%': { opacity: '0.8' },
+                        }
+                    },
+                    animation: {
+                        float: 'float 4s ease-in-out infinite',
+                        glow: 'glow 6s ease-in-out infinite',
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <!-- Google Fonts & FontAwesome 6 Icons -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        /* Custom Scrollbar Styling */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #0b0f19;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #8b5cf6;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #d946ef;
+        }
+        
+        /* Glassmorphism Styles */
+        .glass {
+            background: rgba(15, 23, 42, 0.75);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+        }
+        .light .glass {
+            background: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(15, 23, 42, 0.08);
+        }
+
+        .light body {
+            background-color: #f8fafc;
+            color: #0f172a;
+        }
+
+        .line-clamp-2 {
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+    </style>
+</head>
+<body class="bg-slate-950 text-slate-100 light:bg-slate-50 light:text-slate-900 font-sans transition-colors duration-300 antialiased selection:bg-violet-500 selection:text-white min-h-screen flex flex-col">
+
+    <!-- ================= NAVBAR ================= -->
+    <header class="sticky top-0 z-50 glass transition-all duration-300" id="navbar">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16 sm:h-20">
+                
+                <!-- Logo Brand: Fajar.Des -->
+                <a href="#home" class="flex items-center gap-2.5 text-xl font-black tracking-tight group">
+                    <span class="w-10 h-10 rounded-xl bg-gradient-to-tr from-violet-600 via-fuchsia-500 to-cyan-400 flex items-center justify-center text-white shadow-lg shadow-violet-500/30 group-hover:scale-105 transition-transform">
+                        <i class="fa-solid fa-pen-nib text-sm"></i>
+                    </span>
+                    <span class="bg-gradient-to-r from-violet-400 via-fuchsia-400 to-cyan-400 bg-clip-text text-transparent font-extrabold">Fajar.Des</span>
+                </a>
+
+                <!-- Navigation Links -->
+                <nav class="hidden md:flex items-center gap-1 lg:gap-2">
+                    <a href="#home" class="nav-link px-3.5 py-2 rounded-xl text-sm font-medium text-slate-300 light:text-slate-700 hover:text-white hover:bg-slate-800/50 transition-all">Beranda</a>
+                    <a href="#about" class="nav-link px-3.5 py-2 rounded-xl text-sm font-medium text-slate-300 light:text-slate-700 hover:text-white hover:bg-slate-800/50 transition-all">Tentang</a>
+                    <a href="#skills" class="nav-link px-3.5 py-2 rounded-xl text-sm font-medium text-slate-300 light:text-slate-700 hover:text-white hover:bg-slate-800/50 transition-all">Keahlian</a>
+                    <a href="#projects" class="nav-link px-3.5 py-2 rounded-xl text-sm font-medium text-slate-300 light:text-slate-700 hover:text-white hover:bg-slate-800/50 transition-all">Portofolio</a>
+                    <a href="#timeline" class="nav-link px-3.5 py-2 rounded-xl text-sm font-medium text-slate-300 light:text-slate-700 hover:text-white hover:bg-slate-800/50 transition-all">Riwayat</a>
+                    <a href="#contact" class="nav-link px-3.5 py-2 rounded-xl text-sm font-medium text-slate-300 light:text-slate-700 hover:text-white hover:bg-slate-800/50 transition-all">Contact to:</a>
+                </nav>
+
+                <!-- Actions: Theme Toggle & Contact Button -->
+                <div class="flex items-center gap-3">
+                    <button id="theme-toggle" aria-label="Toggle Theme" class="p-2.5 rounded-xl bg-slate-800/80 light:bg-slate-200 hover:bg-slate-700 light:hover:bg-slate-300 text-violet-400 transition-all border border-slate-700/50 light:border-slate-300">
+                        <i id="theme-toggle-dark-icon" class="fa-solid fa-moon text-lg hidden"></i>
+                        <i id="theme-toggle-light-icon" class="fa-solid fa-sun text-lg"></i>
+                    </button>
+
+                    <a href="#contact" class="hidden sm:inline-flex items-center gap-2 px-5 py-2.5 rounded-xl text-sm font-semibold text-white bg-gradient-to-r from-violet-600 via-fuchsia-600 to-violet-600 hover:from-violet-500 hover:to-fuchsia-500 shadow-lg shadow-violet-500/25 transition-all hover:-translate-y-0.5">
+                        <span>Diskusi Proyek</span>
+                        <i class="fa-solid fa-arrow-right text-xs"></i>
+                    </a>
+
+                    <!-- Mobile Menu Button -->
+                    <button id="mobile-menu-btn" aria-label="Open Menu" class="md:hidden p-2.5 rounded-xl text-slate-200 light:text-slate-800 hover:bg-slate-800/80 border border-slate-700/50 transition-colors">
+                        <i class="fa-solid fa-bars text-xl" id="menu-icon"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Dropdown Menu -->
+        <div id="mobile-menu" class="hidden md:hidden border-b border-slate-800 bg-slate-950/95 light:bg-slate-100/95 backdrop-blur-xl px-4 pt-2 pb-6 space-y-2">
+            <a href="#home" class="mobile-nav-link block px-4 py-3 rounded-xl text-base font-medium text-slate-200 light:text-slate-800 hover:bg-slate-800/60">Beranda</a>
+            <a href="#about" class="mobile-nav-link block px-4 py-3 rounded-xl text-base font-medium text-slate-200 light:text-slate-800 hover:bg-slate-800/60">Tentang Saya</a>
+            <a href="#skills" class="mobile-nav-link block px-4 py-3 rounded-xl text-base font-medium text-slate-200 light:text-slate-800 hover:bg-slate-800/60">Keahlian & Tools</a>
+            <a href="#projects" class="mobile-nav-link block px-4 py-3 rounded-xl text-base font-medium text-slate-200 light:text-slate-800 hover:bg-slate-800/60">Portofolio Karya</a>
+            <a href="#timeline" class="mobile-nav-link block px-4 py-3 rounded-xl text-base font-medium text-slate-200 light:text-slate-800 hover:bg-slate-800/60">Riwayat Pengalaman</a>
+            <a href="#contact" class="mobile-nav-link block px-4 py-3 rounded-xl text-base font-medium text-slate-200 light:text-slate-800 hover:bg-slate-800/60">Contact to:</a>
+        </div>
+    </header>
+
+
+    <!-- ================= HERO SECTION ================= -->
+    <section id="home" class="relative min-h-[calc(100vh-5rem)] flex items-center justify-center py-16 overflow-hidden bg-slate-950 light:bg-slate-50">
+        <!-- Glowing Ambient Lights Background -->
+        <div class="absolute top-1/4 left-1/3 -translate-x-1/2 -translate-y-1/2 w-[30rem] h-[30rem] bg-violet-600/20 rounded-full blur-[130px] pointer-events-none animate-glow"></div>
+        <div class="absolute bottom-10 right-10 w-[26rem] h-[26rem] bg-fuchsia-600/20 rounded-full blur-[130px] pointer-events-none animate-glow" style="animation-delay: 2s;"></div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full relative z-10">
+            <div class="grid lg:grid-cols-12 gap-12 lg:gap-8 items-center">
+                
+                <!-- Hero Content -->
+                <div class="lg:col-span-7 text-center lg:text-left flex flex-col items-center lg:items-start space-y-6">
+                    
+                    <!-- WhatsApp & Collaboration Status Badge -->
+                    <a href="https://wa.me/628315144101" target="_blank" class="inline-flex items-center gap-2.5 px-4 py-2 rounded-full bg-slate-800/60 light:bg-slate-200/90 border border-slate-700/60 light:border-slate-300 text-slate-100 light:text-slate-900 text-xs sm:text-sm font-semibold shadow-xl hover:border-emerald-500/50 transition-all">
+                        <span class="flex h-2.5 w-2.5 rounded-full bg-emerald-400 animate-ping"></span>
+                        <span class="text-emerald-400 font-bold">🟢 WA: +62 831 514 4101</span>
+                        <span class="text-slate-500 light:text-slate-400">•</span>
+                        <span class="font-bold text-violet-400 light:text-violet-600">@to.pjxr</span>
+                        <span class="text-slate-500 light:text-slate-400">•</span>
+                        <span class="text-xs text-slate-300 light:text-slate-700 font-medium">Open for collaboration</span>
+                    </a>
+
+                    <!-- Full Name -->
+                    <p class="text-xl sm:text-2xl font-bold bg-gradient-to-r from-violet-400 via-fuchsia-400 to-cyan-400 bg-clip-text text-transparent tracking-wide">
+                        Fajar Ramdan Faidillah
+                    </p>
+
+                    <!-- Main Headline -->
+                    <h1 class="text-4xl sm:text-5xl lg:text-6xl font-black tracking-tight text-slate-100 light:text-slate-900 leading-[1.12]">
+                        Mendesain Semua <br class="hidden sm:inline"/> <span class="bg-gradient-to-r from-violet-400 via-fuchsia-400 to-cyan-400 bg-clip-text text-transparent">Solusi Digital</span>
+                    </h1>
+
+                    <!-- Typing Animation -->
+                    <div class="text-lg sm:text-2xl font-bold text-slate-200 light:text-slate-800 h-10 flex items-center gap-2">
+                        <span>Saya seorang</span>
+                        <span id="typing-text" class="text-violet-400 light:text-violet-600 border-r-2 border-violet-400 pr-1 font-mono"></span>
+                    </div>
+
+                    <!-- Short Bio -->
+                    <p class="text-base sm:text-lg text-slate-300 light:text-slate-600 max-w-2xl leading-relaxed">
+                        Saya seorang Designer yang berfokus <strong class="text-violet-400 light:text-violet-600 font-semibold">mendesain semua solusi digital</strong> — mulai dari antarmuka UI/UX, prototipe aplikasi, identitas visual, hingga pengalaman pengguna yang bermakna.
+                    </p>
+
+                    <!-- Action Buttons: "Lihat Portofolio" & "Contact to:" -->
+                    <div class="flex flex-wrap items-center justify-center lg:justify-start gap-4 pt-2">
+                        <a href="#projects" class="px-7 py-4 rounded-xl font-bold text-white bg-gradient-to-r from-violet-600 via-fuchsia-600 to-violet-600 hover:from-violet-500 hover:to-fuchsia-500 shadow-xl shadow-violet-500/25 transition-all hover:-translate-y-0.5 flex items-center gap-2.5">
+                            <i class="fa-solid fa-shapes text-sm"></i>
+                            <span>Lihat Portofolio</span>
+                        </a>
+                        <a href="#contact" class="px-7 py-4 rounded-xl font-bold border border-slate-700/80 light:border-slate-300 text-slate-200 light:text-slate-800 hover:border-violet-500 transition-all hover:-translate-y-0.5 glass flex items-center gap-2.5">
+                            <i class="fa-regular fa-paper-plane text-sm"></i>
+                            <span>Contact to:</span>
+                        </a>
+                    </div>
+
+                    <!-- Social Icons -->
+                    <div class="pt-4 flex items-center gap-4">
+                        <span class="text-xs uppercase tracking-widest text-slate-400 font-bold">Sosial Media:</span>
+                        <div class="flex items-center gap-3">
+                            <a href="https://wa.me/628315144101" target="_blank" class="w-10 h-10 rounded-xl glass flex items-center justify-center text-slate-300 hover:text-emerald-400 hover:border-emerald-500/50 hover:scale-110 transition-all" aria-label="WhatsApp">
+                                <i class="fa-brands fa-whatsapp text-lg"></i>
+                            </a>
+                            <a href="https://instagram.com/to.pjxr" target="_blank" class="w-10 h-10 rounded-xl glass flex items-center justify-center text-slate-300 hover:text-fuchsia-400 hover:border-fuchsia-500/50 hover:scale-110 transition-all" aria-label="Instagram">
+                                <i class="fa-brands fa-instagram text-lg"></i>
+                            </a>
+                            <a href="mailto:gnzjarr@gmail.com" class="w-10 h-10 rounded-xl glass flex items-center justify-center text-slate-300 hover:text-violet-400 hover:border-violet-500/50 hover:scale-110 transition-all" aria-label="Gmail">
+                                <i class="fa-regular fa-envelope text-lg"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Avatar Profile Badge -->
+                <div class="lg:col-span-5 flex justify-center">
+                    <div class="relative w-72 h-72 sm:w-88 sm:h-88 lg:w-96 lg:h-96">
+                        <!-- Glowing Ring -->
+                        <div class="absolute -inset-1 rounded-3xl bg-gradient-to-r from-violet-600 via-fuchsia-500 to-cyan-400 opacity-80 blur-xl animate-pulse"></div>
+                        
+                        <div class="relative w-full h-full rounded-3xl bg-slate-900 light:bg-white border border-slate-700/60 light:border-slate-200 shadow-2xl flex flex-col items-center justify-center overflow-hidden group">
+                            
+                            <!-- Initial Avatar Badge 'FR' -->
+                            <div class="w-36 h-36 rounded-2xl bg-gradient-to-tr from-violet-600 via-fuchsia-600 to-cyan-400 p-1 shadow-2xl shadow-violet-500/40 group-hover:scale-105 transition-transform duration-500">
+                                <div class="w-full h-full rounded-xl bg-slate-950 light:bg-slate-900 flex items-center justify-center text-transparent bg-clip-text bg-gradient-to-r from-violet-300 via-fuchsia-300 to-cyan-300 text-5xl font-black">
+                                    FR
+                                </div>
+                            </div>
+
+                            <div class="mt-5 text-center px-4">
+                                <h3 class="text-xl font-bold text-white light:text-slate-900">Fajar Ramdan Faidillah</h3>
+                                <a href="https://wa.me/628315144101" target="_blank" class="text-xs font-bold text-emerald-400 mt-1 flex items-center justify-center gap-1.5 hover:underline">
+                                    <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+                                    WA: +62 831 514 4101 • @to.pjxr
+                                </a>
+                                <p class="text-xs font-semibold text-violet-400 uppercase tracking-widest mt-1">gnzjarr@gmail.com</p>
+                            </div>
+                        </div>
+
+                        <!-- Floating Badges -->
+                        <div class="absolute -top-4 -left-4 glass px-4 py-3 rounded-2xl shadow-2xl flex items-center gap-3 animate-float border border-violet-500/30">
+                            <div class="w-10 h-10 rounded-xl bg-violet-500/20 text-violet-400 flex items-center justify-center text-lg">
+                                <i class="fa-solid fa-palette"></i>
+                            </div>
+                            <div>
+                                <p class="text-[10px] text-slate-400 uppercase font-bold tracking-wider">Spesialisasi</p>
+                                <p class="text-xs font-bold text-white light:text-slate-800">UI/UX & Visuals</p>
+                            </div>
+                        </div>
+
+                        <div class="absolute -bottom-4 -right-4 glass px-4 py-3 rounded-2xl shadow-2xl flex items-center gap-3 animate-float border border-fuchsia-500/30" style="animation-delay: 1.5s;">
+                            <div class="w-10 h-10 rounded-xl bg-fuchsia-500/20 text-fuchsia-400 flex items-center justify-center text-lg">
+                                <i class="fa-solid fa-layer-group"></i>
+                            </div>
+                            <div>
+                                <p class="text-[10px] text-slate-400 uppercase font-bold tracking-wider">Hasil Desain</p>
+                                <p class="text-xs font-bold text-white light:text-slate-800">10+ Proyek Selesai</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+
+    <!-- ================= STATS SECTION ================= -->
+    <section id="about" class="py-16 bg-slate-900/60 light:bg-slate-100 border-y border-slate-800/80 light:border-slate-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                
+                <!-- Stat 1: 2+ Tahun Pengalaman -->
+                <div class="glass p-8 rounded-3xl text-center border border-slate-800 light:border-slate-200 hover:border-violet-500/40 transition-all hover:-translate-y-1">
+                    <div class="w-14 h-14 rounded-2xl bg-violet-500/20 text-violet-400 mx-auto mb-4 flex items-center justify-center text-2xl">
+                        <i class="fa-solid fa-briefcase"></i>
+                    </div>
+                    <div class="text-4xl sm:text-5xl font-extrabold text-white light:text-slate-900 font-mono mb-2" id="stat-exp">0</div>
+                    <p class="text-sm font-bold text-violet-400 uppercase tracking-wider">Tahun Pengalaman</p>
+                    <p class="text-xs text-slate-400 light:text-slate-600 mt-1">Perancangan UI/UX & Digital Solutions</p>
+                </div>
+
+                <!-- Stat 2: 10+ Proyek Selesai -->
+                <div class="glass p-8 rounded-3xl text-center border border-slate-800 light:border-slate-200 hover:border-fuchsia-500/40 transition-all hover:-translate-y-1">
+                    <div class="w-14 h-14 rounded-2xl bg-fuchsia-500/20 text-fuchsia-400 mx-auto mb-4 flex items-center justify-center text-2xl">
+                        <i class="fa-solid fa-check-double"></i>
+                    </div>
+                    <div class="text-4xl sm:text-5xl font-extrabold text-white light:text-slate-900 font-mono mb-2" id="stat-projects">0</div>
+                    <p class="text-sm font-bold text-fuchsia-400 uppercase tracking-wider">Proyek Selesai</p>
+                    <p class="text-xs text-slate-400 light:text-slate-600 mt-1">Web App, Mobile UI & Visual Assets</p>
+                </div>
+
+                <!-- Stat 3: 100% Kepuasan Klien -->
+                <div class="glass p-8 rounded-3xl text-center border border-slate-800 light:border-slate-200 hover:border-cyan-400/40 transition-all hover:-translate-y-1">
+                    <div class="w-14 h-14 rounded-2xl bg-cyan-500/20 text-cyan-400 mx-auto mb-4 flex items-center justify-center text-2xl">
+                        <i class="fa-solid fa-heart"></i>
+                    </div>
+                    <div class="text-4xl sm:text-5xl font-extrabold text-white light:text-slate-900 font-mono mb-2" id="stat-satisfaction">0</div>
+                    <p class="text-sm font-bold text-cyan-400 uppercase tracking-wider">Kepuasan Klien</p>
+                    <p class="text-xs text-slate-400 light:text-slate-600 mt-1">Komitmen Hasil & Kolaborasi Interaktif</p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+
+    <!-- ================= KEAHLIAN & DESIGN TOOLS ================= -->
+    <section id="skills" class="py-24 bg-slate-950 light:bg-slate-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            
+            <div class="text-center max-w-2xl mx-auto mb-16">
+                <h2 class="text-xs font-bold text-fuchsia-400 uppercase tracking-widest mb-2">Kompetensi Utama</h2>
+                <p class="text-3xl sm:text-4xl font-extrabold text-white light:text-slate-900">Perangkat & Keahlian Desain</p>
+                <div class="w-16 h-1 bg-gradient-to-r from-violet-500 to-fuchsia-500 mx-auto mt-4 rounded-full"></div>
+            </div>
+
+            <!-- Skill Progress Bars -->
+            <div class="grid md:grid-cols-2 gap-8 mb-16">
+                <div class="glass p-8 rounded-3xl border border-slate-800 light:border-slate-200">
+                    <h3 class="text-xl font-bold text-white light:text-slate-900 mb-6 flex items-center gap-2.5">
+                        <i class="fa-solid fa-wand-magic-sparkles text-violet-400"></i> Keahlian Desain & UI/UX
+                    </h3>
+                    <div class="space-y-5">
+                        <div>
+                            <div class="flex justify-between text-sm font-semibold mb-2">
+                                <span class="text-slate-200 light:text-slate-800">UI/UX Design & Wireframing</span>
+                                <span class="text-violet-400">95%</span>
+                            </div>
+                            <div class="w-full h-2.5 rounded-full bg-slate-800 light:bg-slate-200 overflow-hidden">
+                                <div class="skill-bar h-full rounded-full bg-gradient-to-r from-violet-500 to-fuchsia-500" style="width: 0%" data-progress="95%"></div>
+                            </div>
+                        </div>
+
+                        <div>
+                            <div class="flex justify-between text-sm font-semibold mb-2">
+                                <span class="text-slate-200 light:text-slate-800">Interactive Prototyping</span>
+                                <span class="text-violet-400">92%</span>
+                            </div>
+                            <div class="w-full h-2.5 rounded-full bg-slate-800 light:bg-slate-200 overflow-hidden">
+                                <div class="skill-bar h-full rounded-full bg-gradient-to-r from-violet-500 to-fuchsia-500" style="width: 0%" data-progress="92%"></div>
+                            </div>
+                        </div>
+
+                        <div>
+                            <div class="flex justify-between text-sm font-semibold mb-2">
+                                <span class="text-slate-200 light:text-slate-800">Design Systems & Layout Concept</span>
+                                <span class="text-violet-400">90%</span>
+                            </div>
+                            <div class="w-full h-2.5 rounded-full bg-slate-800 light:bg-slate-200 overflow-hidden">
+                                <div class="skill-bar h-full rounded-full bg-gradient-to-r from-violet-500 to-fuchsia-500" style="width: 0%" data-progress="90%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="glass p-8 rounded-3xl border border-slate-800 light:border-slate-200">
+                    <h3 class="text-xl font-bold text-white light:text-slate-900 mb-6 flex items-center gap-2.5">
+                        <i class="fa-solid fa-laptop-code text-fuchsia-400"></i> Metodologi & Frontend
+                    </h3>
+                    <div class="space-y-5">
+                        <div>
+                            <div class="flex justify-between text-sm font-semibold mb-2">
+                                <span class="text-slate-200 light:text-slate-800">User Research & Visual Concept</span>
+                                <span class="text-fuchsia-400">88%</span>
+                            </div>
+                            <div class="w-full h-2.5 rounded-full bg-slate-800 light:bg-slate-200 overflow-hidden">
+                                <div class="skill-bar h-full rounded-full bg-gradient-to-r from-fuchsia-500 to-cyan-400" style="width: 0%" data-progress="88%"></div>
+                            </div>
+                        </div>
+
+                        <div>
+                            <div class="flex justify-between text-sm font-semibold mb-2">
+                                <span class="text-slate-200 light:text-slate-800">Visual Identity & DKV Graphic Design</span>
+                                <span class="text-fuchsia-400">94%</span>
+                            </div>
+                            <div class="w-full h-2.5 rounded-full bg-slate-800 light:bg-slate-200 overflow-hidden">
+                                <div class="skill-bar h-full rounded-full bg-gradient-to-r from-fuchsia-500 to-cyan-400" style="width: 0%" data-progress="94%"></div>
+                            </div>
+                        </div>
+
+                        <div>
+                            <div class="flex justify-between text-sm font-semibold mb-2">
+                                <span class="text-slate-200 light:text-slate-800">HTML5 / CSS3 / Tailwind CSS</span>
+                                <span class="text-fuchsia-400">86%</span>
+                            </div>
+                            <div class="w-full h-2.5 rounded-full bg-slate-800 light:bg-slate-200 overflow-hidden">
+                                <div class="skill-bar h-full rounded-full bg-gradient-to-r from-fuchsia-500 to-cyan-400" style="width: 0%" data-progress="86%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Design Tools Grid: Canva, Figma, Framer, Adobe Illustrator, Photoshop, Tailwind CSS -->
+            <h3 class="text-xl font-bold text-center text-white light:text-slate-900 mb-8">Design Tools & Perangkat Utama</h3>
+            <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-4">
+                
+                <!-- 1. Canva -->
+                <div class="glass p-5 rounded-2xl border border-slate-800 light:border-slate-200 text-center hover:border-cyan-400 transition-all hover:-translate-y-1 group">
+                    <div class="w-12 h-12 rounded-xl bg-gradient-to-tr from-cyan-500 to-blue-500 mx-auto mb-3 flex items-center justify-center text-white font-black text-xl shadow-lg group-hover:scale-110 transition-transform">
+                        C
+                    </div>
+                    <h4 class="text-sm font-bold text-white light:text-slate-800">Canva</h4>
+                    <p class="text-[10px] text-slate-400 light:text-slate-500 mt-1">Marketing & Visual Assets</p>
+                </div>
+
+                <!-- 2. Figma -->
+                <div class="glass p-5 rounded-2xl border border-slate-800 light:border-slate-200 text-center hover:border-violet-500 transition-all hover:-translate-y-1 group">
+                    <div class="w-12 h-12 rounded-xl bg-violet-500/20 text-violet-400 mx-auto mb-3 flex items-center justify-center text-2xl shadow-lg group-hover:scale-110 transition-transform">
+                        <i class="fa-brands fa-figma"></i>
+                    </div>
+                    <h4 class="text-sm font-bold text-white light:text-slate-800">Figma</h4>
+                    <p class="text-[10px] text-slate-400 light:text-slate-500 mt-1">UI/UX & Prototyping</p>
+                </div>
+
+                <!-- 3. Framer -->
+                <div class="glass p-5 rounded-2xl border border-slate-800 light:border-slate-200 text-center hover:border-fuchsia-500 transition-all hover:-translate-y-1 group">
+                    <div class="w-12 h-12 rounded-xl bg-fuchsia-500/20 text-fuchsia-400 mx-auto mb-3 flex items-center justify-center text-2xl shadow-lg group-hover:scale-110 transition-transform">
+                        <i class="fa-solid fa-cubes"></i>
+                    </div>
+                    <h4 class="text-sm font-bold text-white light:text-slate-800">Framer</h4>
+                    <p class="text-[10px] text-slate-400 light:text-slate-500 mt-1">Interactive Web Design</p>
+                </div>
+
+                <!-- 4. Adobe Illustrator -->
+                <div class="glass p-5 rounded-2xl border border-slate-800 light:border-slate-200 text-center hover:border-orange-500 transition-all hover:-translate-y-1 group">
+                    <div class="w-12 h-12 rounded-xl bg-orange-500/20 text-orange-400 mx-auto mb-3 flex items-center justify-center text-xl font-black shadow-lg group-hover:scale-110 transition-transform">
+                        Ai
+                    </div>
+                    <h4 class="text-sm font-bold text-white light:text-slate-800">Illustrator</h4>
+                    <p class="text-[10px] text-slate-400 light:text-slate-500 mt-1">Vector & Branding</p>
+                </div>
+
+                <!-- 5. Adobe Photoshop -->
+                <div class="glass p-5 rounded-2xl border border-slate-800 light:border-slate-200 text-center hover:border-blue-500 transition-all hover:-translate-y-1 group">
+                    <div class="w-12 h-12 rounded-xl bg-blue-600/20 text-blue-400 mx-auto mb-3 flex items-center justify-center text-xl font-black shadow-lg group-hover:scale-110 transition-transform">
+                        Ps
+                    </div>
+                    <h4 class="text-sm font-bold text-white light:text-slate-800">Photoshop</h4>
+                    <p class="text-[10px] text-slate-400 light:text-slate-500 mt-1">Photo Editing & Graphic</p>
+                </div>
+
+                <!-- 6. Tailwind CSS -->
+                <div class="glass p-5 rounded-2xl border border-slate-800 light:border-slate-200 text-center hover:border-cyan-400 transition-all hover:-translate-y-1 group">
+                    <div class="w-12 h-12 rounded-xl bg-cyan-500/20 text-cyan-400 mx-auto mb-3 flex items-center justify-center text-2xl shadow-lg group-hover:scale-110 transition-transform">
+                        <i class="fa-solid fa-code"></i>
+                    </div>
+                    <h4 class="text-sm font-bold text-white light:text-slate-800">Tailwind CSS</h4>
+                    <p class="text-[10px] text-slate-400 light:text-slate-500 mt-1">UI Code & Styling</p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+
+    <!-- ================= PORTOFOLIO SECTION ================= -->
+    <section id="projects" class="py-24 bg-slate-900/60 light:bg-slate-100 border-t border-slate-800/80 light:border-slate-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            
+            <div class="text-center max-w-2xl mx-auto mb-12">
+                <h2 class="text-xs font-bold text-violet-400 uppercase tracking-widest mb-2">Karya Terpilih</h2>
+                <p class="text-3xl sm:text-4xl font-extrabold text-white light:text-slate-900">Portofolio Karya Saya</p>
+                <div class="w-16 h-1 bg-gradient-to-r from-violet-500 to-fuchsia-500 mx-auto mt-4 rounded-full"></div>
+            </div>
+
+            <!-- PORTOFOLIO FILTER TABS - TWO ROW LAYOUT -->
+            <div class="flex flex-col items-center justify-center gap-3 mb-14">
+                <!-- Row 1: Semua Karya, UI/UX, Web App -->
+                <div class="flex flex-wrap items-center justify-center gap-3">
+                    <button class="filter-btn px-6 py-3 rounded-2xl text-sm font-bold bg-gradient-to-r from-violet-600 via-fuchsia-600 to-violet-600 text-white shadow-lg shadow-violet-500/40 transition-all cursor-pointer" data-filter="all">
+                        Semua Karya
+                    </button>
+                    <button class="filter-btn px-6 py-3 rounded-2xl text-sm font-bold bg-slate-900/90 light:bg-slate-200 text-slate-100 light:text-slate-800 border border-slate-700/60 light:border-slate-300 hover:border-violet-500/80 transition-all cursor-pointer" data-filter="uiux">
+                        UI/UX
+                    </button>
+                    <button class="filter-btn px-6 py-3 rounded-2xl text-sm font-bold bg-slate-900/90 light:bg-slate-200 text-slate-100 light:text-slate-800 border border-slate-700/60 light:border-slate-300 hover:border-violet-500/80 transition-all cursor-pointer" data-filter="webapp">
+                        Web App
+                    </button>
+                </div>
+                <!-- Row 2: AI / Tools -->
+                <div class="flex justify-center">
+                    <button class="filter-btn px-6 py-3 rounded-2xl text-sm font-bold bg-slate-900/90 light:bg-slate-200 text-slate-100 light:text-slate-800 border border-slate-700/60 light:border-slate-300 hover:border-violet-500/80 transition-all cursor-pointer" data-filter="aitools">
+                        AI / Tools
+                    </button>
+                </div>
+            </div>
+
+            <!-- Portfolio Grid Container -->
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8" id="portfolio-container">
+                
+                <!-- PROYEK UI/UX 1: Desain ID Card -->
+                <div class="project-card glass rounded-3xl overflow-hidden border border-cyan-500/40 light:border-cyan-300 transition-all hover:-translate-y-2 group" data-category="uiux">
+                    <div class="relative h-52 bg-gradient-to-b from-cyan-950/80 via-slate-900 to-slate-900 overflow-hidden flex items-center justify-center p-4">
+                        <div class="absolute inset-0 bg-gradient-to-tr from-cyan-600/30 via-violet-600/30 to-transparent opacity-80 group-hover:scale-110 transition-transform duration-500"></div>
+                        
+                        <div class="relative z-10 text-center">
+                            <span class="w-16 h-16 rounded-2xl bg-gradient-to-tr from-cyan-500 to-blue-600 text-white flex items-center justify-center mx-auto mb-2 shadow-xl shadow-cyan-500/40 group-hover:scale-110 transition-transform">
+                                <i class="fa-solid fa-id-card text-2xl"></i>
+                            </span>
+                            <span class="text-xs font-bold text-cyan-300 tracking-wider uppercase block">Canva Project • Professional Layout</span>
+                        </div>
+                        
+                        <span class="absolute top-4 left-4 px-3 py-1 rounded-full text-[10px] font-extrabold uppercase bg-cyan-500 text-white tracking-wider shadow-md">UI/UX & Canva</span>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-white light:text-slate-900 mb-2 group-hover:text-cyan-400 transition-colors">Desain ID Card</h3>
+                        <p class="text-sm text-slate-400 light:text-slate-600 mb-4 line-clamp-2">Rancangan kartu identitas profesional dengan konsep tata letak bersih, modern, dan siap cetak menggunakan Canva.</p>
+                        <div class="flex flex-wrap gap-2 mb-6">
+                            <span class="px-2.5 py-1 rounded-lg bg-cyan-500/10 border border-cyan-500/30 text-xs text-cyan-400 font-medium">Canva</span>
+                            <span class="px-2.5 py-1 rounded-lg bg-slate-800 light:bg-slate-200 text-xs text-slate-300 light:text-slate-700 font-medium">Identity Layout</span>
+                            <span class="px-2.5 py-1 rounded-lg bg-slate-800 light:bg-slate-200 text-xs text-slate-300 light:text-slate-700 font-medium">Print Ready</span>
+                        </div>
+                        <button onclick="openModal('Desain ID Card', 'UI/UX & Identity Design', 'Canva, Visual Design, Print Layout', 'Perancangan kartu identitas (ID Card) profesional menggunakan Canva. Menampilkan komposisi tata letak dua sisi (depan & belakang), hierarki informasi karyawan yang terstruktur, integrasi QR Code, serta kombinasi warna modern yang siap cetak.', ['Desain 2 Sisi Symmetrical (Depan & Belakang)', 'Hierarki Tipografi & Tata Letak Bersih', 'Elemen Vektor Brand & QR Code Scanner', 'Format Siap Cetak Presisi Tinggi (Print-Ready Layout)'], 'https://canva.link/jhtxrvbmz669eus', 'Lihat Karya di Canva')" class="w-full py-3 rounded-xl bg-gradient-to-r from-cyan-600 to-blue-600 hover:from-cyan-500 hover:to-blue-500 text-white font-semibold text-sm transition-all flex items-center justify-center gap-2 shadow-lg shadow-cyan-600/20">
+                            <span>Lihat Karya di Canva</span>
+                            <i class="fa-solid fa-arrow-up-right-from-square text-xs"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- PROYEK UI/UX 2: Poster Sumpah Pemuda - UKM R-TIK -->
+                <div class="project-card glass rounded-3xl overflow-hidden border border-red-500/40 light:border-red-300 transition-all hover:-translate-y-2 group" data-category="uiux">
+                    <div class="relative h-52 bg-gradient-to-b from-red-950/80 via-slate-900 to-slate-900 overflow-hidden flex items-center justify-center p-4">
+                        <div class="absolute inset-0 bg-gradient-to-tr from-red-600/30 via-cyan-600/30 to-transparent opacity-80 group-hover:scale-110 transition-transform duration-500"></div>
+                        
+                        <div class="relative z-10 text-center">
+                            <span class="w-16 h-16 rounded-2xl bg-gradient-to-tr from-red-600 to-red-500 text-white flex items-center justify-center mx-auto mb-2 shadow-xl shadow-red-500/40 group-hover:scale-110 transition-transform">
+                                <i class="fa-solid fa-flag text-2xl"></i>
+                            </span>
+                            <span class="text-xs font-bold text-red-300 tracking-wider uppercase block">UKM R-TIK • Unmuh Babel</span>
+                        </div>
+                        
+                        <span class="absolute top-4 left-4 px-3 py-1 rounded-full text-[10px] font-extrabold uppercase bg-red-600 text-white tracking-wider shadow-md">UI/UX & Poster</span>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-white light:text-slate-900 mb-2 group-hover:text-red-400 transition-colors">Poster Sumpah Pemuda - UKM R-TIK</h3>
+                        <p class="text-sm text-slate-400 light:text-slate-600 mb-4 line-clamp-2">Desain poster memperingati Hari Sumpah Pemuda 28 Oktober 2025 untuk UKM Relawan TIK Universitas Muhammadiyah Bangka Belitung.</p>
+                        <div class="flex flex-wrap gap-2 mb-6">
+                            <span class="px-2.5 py-1 rounded-lg bg-red-500/10 border border-red-500/30 text-xs text-red-400 font-medium">Canva</span>
+                            <span class="px-2.5 py-1 rounded-lg bg-slate-800 light:bg-slate-200 text-xs text-slate-300 light:text-slate-700 font-medium">Poster UI</span>
+                            <span class="px-2.5 py-1 rounded-lg bg-slate-800 light:bg-slate-200 text-xs text-slate-300 light:text-slate-700 font-medium">Visual Branding</span>
+                        </div>
+                        <button onclick="openModal('Poster Sumpah Pemuda - UKM R-TIK', 'UI/UX & Poster Layout', 'Canva, Visual Design, Typography & Composition', 'Perancangan poster digital memperingati Hari Sumpah Pemuda 28 Oktober 2025 untuk organisasi UKM Relawan TIK Universitas Muhammadiyah Bangka Belitung. Menggabungkan unsur nasionalisme, ilustrasi tangan menggenggam bendera Merah Putih, serta tipografi tebal yang mengobarkan semangat pemuda di era digital.', ['Branding Institusi (Diktisaintek, Unmuh Babel, UKM R-TIK)', 'Elemen Ilustrasi Vektor & Peta Indonesia Texturised', 'Pesan Kutipan Diksi Nasionalisme Berdampak', 'Komposisi Merah Putih & Layout Publikasi Sosial Media'], 'https://canva.link/9gv77dwyer2y64r', 'Lihat Karya di Canva')" class="w-full py-3 rounded-xl bg-gradient-to-r from-red-600 to-rose-600 hover:from-red-500 hover:to-rose-500 text-white font-semibold text-sm transition-all flex items-center justify-center gap-2 shadow-lg shadow-red-600/20">
+                            <span>Lihat Karya di Canva</span>
+                            <i class="fa-solid fa-arrow-up-right-from-square text-xs"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- PROYEK WEB APP 1: Aplikasi Streaming -->
+                <div class="project-card glass rounded-3xl overflow-hidden border border-purple-500/40 light:border-purple-300 transition-all hover:-translate-y-2 group" data-category="webapp">
+                    <div class="relative h-52 bg-gradient-to-b from-purple-950/80 via-slate-900 to-slate-900 overflow-hidden flex items-center justify-center p-4">
+                        <div class="absolute inset-0 bg-gradient-to-tr from-purple-600/30 via-fuchsia-600/30 to-transparent opacity-80 group-hover:scale-110 transition-transform duration-500"></div>
+                        
+                        <div class="relative z-10 text-center">
+                            <span class="w-16 h-16 rounded-2xl bg-gradient-to-tr from-purple-600 to-fuchsia-600 text-white flex items-center justify-center mx-auto mb-2 shadow-xl shadow-purple-600/40 group-hover:scale-110 transition-transform">
+                                <i class="fa-solid fa-play text-2xl"></i>
+                            </span>
+                            <span class="text-xs font-bold text-purple-300 tracking-wider uppercase block">Figma Project • UI/UX Design</span>
+                        </div>
+                        
+                        <span class="absolute top-4 left-4 px-3 py-1 rounded-full text-[10px] font-extrabold uppercase bg-purple-600 text-white tracking-wider shadow-md">Web App & Figma</span>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-white light:text-slate-900 mb-2 group-hover:text-purple-400 transition-colors">Aplikasi Streaming</h3>
+                        <p class="text-sm text-slate-400 light:text-slate-600 mb-4 line-clamp-2">Desain antarmuka & prototipe interaktif platform aplikasi streaming video modern dengan pemutar media intuitif.</p>
+                        <div class="flex flex-wrap gap-2 mb-6">
+                            <span class="px-2.5 py-1 rounded-lg bg-purple-500/10 border border-purple-500/30 text-xs text-purple-400 font-medium">Figma</span>
+                            <span class="px-2.5 py-1 rounded-lg bg-slate-800 light:bg-slate-200 text-xs text-slate-300 light:text-slate-700 font-medium">UI/UX Layout</span>
+                            <span class="px-2.5 py-1 rounded-lg bg-slate-800 light:bg-slate-200 text-xs text-slate-300 light:text-slate-700 font-medium">Streaming Platform</span>
+                        </div>
+                        <button onclick="openModal('Aplikasi Streaming', 'Web App & UI Design', 'Figma, Prototyping, UI/UX Systems', 'Perancangan antarmuka platform aplikasi streaming multimedia modern. Berfokus pada navigasi katalog konten yang intuitif, sistem rekomendasi film/video, pemutar media interaktif, serta tema dark-mode cinematic untuk kenyamanan pengguna.', ['Desain Layout Catalog Video & Category Filter', 'Interactive Video Player Interface UI', 'Dark Mode Cinematic Color Palette', 'High-Fidelity Interactive Figma Prototype'], 'https://www.figma.com/design/pQ4jqVRD18QEPdkcwTkuu1/Projek-Pak-Arvi?node-id=108-78&t=8nHM1fMXBUHdvtnp-1', 'Buka Desain di Figma')" class="w-full py-3 rounded-xl bg-gradient-to-r from-purple-600 to-fuchsia-600 hover:from-purple-500 hover:to-fuchsia-500 text-white font-semibold text-sm transition-all flex items-center justify-center gap-2 shadow-lg shadow-purple-600/20">
+                            <span>Lihat Karya di Figma</span>
+                            <i class="fa-solid fa-arrow-up-right-from-square text-xs"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- PROYEK WEB APP 2: Zarflix & Chill -->
+                <div class="project-card glass rounded-3xl overflow-hidden border border-fuchsia-500/40 light:border-fuchsia-300 transition-all hover:-translate-y-2 group" data-category="webapp">
+                    <div class="relative h-52 bg-gradient-to-b from-fuchsia-950/80 via-slate-900 to-slate-900 overflow-hidden flex items-center justify-center p-4">
+                        <div class="absolute inset-0 bg-gradient-to-tr from-fuchsia-600/30 via-violet-600/30 to-transparent opacity-80 group-hover:scale-110 transition-transform duration-500"></div>
+                        
+                        <div class="relative z-10 text-center">
+                            <span class="w-16 h-16 rounded-2xl bg-gradient-to-tr from-fuchsia-600 to-pink-600 text-white flex items-center justify-center mx-auto mb-2 shadow-xl shadow-fuchsia-600/40 group-hover:scale-110 transition-transform">
+                                <i class="fa-solid fa-film text-2xl"></i>
+                            </span>
+                            <span class="text-xs font-bold text-fuchsia-300 tracking-wider uppercase block">Figma Design • Movie Platform</span>
+                        </div>
+                        
+                        <span class="absolute top-4 left-4 px-3 py-1 rounded-full text-[10px] font-extrabold uppercase bg-fuchsia-600 text-white tracking-wider shadow-md">Web App & Figma</span>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-white light:text-slate-900 mb-2 group-hover:text-fuchsia-400 transition-colors">Zarflix & Chill</h3>
+                        <p class="text-sm text-slate-400 light:text-slate-600 mb-4 line-clamp-2">Rancangan UI/UX platform hiburan film dan serial TV dengan estetika neon cinematic & navigasi interaktif.</p>
+                        <div class="flex flex-wrap gap-2 mb-6">
+                            <span class="px-2.5 py-1 rounded-lg bg-fuchsia-500/10 border border-fuchsia-500/30 text-xs text-fuchsia-400 font-medium">Figma</span>
+                            <span class="px-2.5 py-1 rounded-lg bg-slate-800 light:bg-slate-200 text-xs text-slate-300 light:text-slate-700 font-medium">Movie UI</span>
+                            <span class="px-2.5 py-1 rounded-lg bg-slate-800 light:bg-slate-200 text-xs text-slate-300 light:text-slate-700 font-medium">Cinematic Layout</span>
+                        </div>
+                        <button onclick="openModal('Zarflix & Chill', 'Web App & Movie Platform UI', 'Figma, Visual Systems, User Experience', 'Konsep desain antarmuka aplikasi streaming film Zarflix & Chill di Figma. Menyajikan antarmuka pengguna bergaya neon-dark yang elegan, fitur bookmark tayangan favorit, serta detail tayangan lengkap dengan trailer interaktif.', ['Banner Carousel Hero Film Trending', 'Grid Katalog Film & Filter Genre', 'Detail Halaman Tayangan & Rating Interaktif', 'Visual Styling Minimalis Dark Neon'], 'https://www.figma.com/design/2cTkvBEnzkqHdoKH7hCyGB/ZARFLIX-AND-CHILL?node-id=0-1&t=8nHM1fMXBUHdvtnp-1', 'Buka Desain di Figma')" class="w-full py-3 rounded-xl bg-gradient-to-r from-fuchsia-600 to-pink-600 hover:from-fuchsia-500 hover:to-pink-500 text-white font-semibold text-sm transition-all flex items-center justify-center gap-2 shadow-lg shadow-fuchsia-600/20">
+                            <span>Lihat Karya di Figma</span>
+                            <i class="fa-solid fa-arrow-up-right-from-square text-xs"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- PROYEK AI / TOOLS 1: Website Gemini -->
+                <div class="project-card glass rounded-3xl overflow-hidden border border-cyan-500/40 light:border-cyan-300 transition-all hover:-translate-y-2 group" data-category="aitools">
+                    <div class="relative h-52 bg-gradient-to-b from-cyan-950/80 via-slate-900 to-slate-900 overflow-hidden flex items-center justify-center p-4">
+                        <div class="absolute inset-0 bg-gradient-to-tr from-cyan-600/30 via-blue-600/30 to-transparent opacity-80 group-hover:scale-110 transition-transform duration-500"></div>
+                        
+                        <div class="relative z-10 text-center">
+                            <!-- Official Google Gemini Multi-Color Gradient Sparkle Logo -->
+                            <svg class="w-16 h-16 mx-auto mb-2 drop-shadow-xl group-hover:scale-110 transition-transform" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <defs>
+                                    <linearGradient id="gemini-official-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+                                        <stop offset="0%" stop-color="#FF3838" />
+                                        <stop offset="30%" stop-color="#F5B700" />
+                                        <stop offset="65%" stop-color="#10B981" />
+                                        <stop offset="100%" stop-color="#2563EB" />
+                                    </linearGradient>
+                                </defs>
+                                <path d="M50 4 C50 29.4 29.4 50 4 50 C29.4 50 50 70.6 50 96 C50 70.6 70.6 50 96 50 C70.6 50 50 29.4 50 4 Z" fill="url(#gemini-official-grad)" />
+                            </svg>
+                            <span class="text-xs font-bold text-cyan-300 tracking-wider uppercase block">AI & Ecosystem • Google</span>
+                        </div>
+                        
+                        <span class="absolute top-4 left-4 px-3 py-1 rounded-full text-[10px] font-extrabold uppercase bg-cyan-500 text-white tracking-wider shadow-md">AI / Tools</span>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-white light:text-slate-900 mb-2 group-hover:text-cyan-400 transition-colors">Website Gemini</h3>
+                        <p class="text-sm text-slate-400 light:text-slate-600 mb-4 line-clamp-2">Eksplorasi antarmuka conversational AI dan integrasi ekosistem Google Gemini untuk efisiensi alur kerja desain & produktivitas.</p>
+                        <div class="flex flex-wrap gap-2 mb-6">
+                            <span class="px-2.5 py-1 rounded-lg bg-cyan-500/10 border border-cyan-500/30 text-xs text-cyan-400 font-medium">Google Gemini</span>
+                            <span class="px-2.5 py-1 rounded-lg bg-slate-800 light:bg-slate-200 text-xs text-slate-300 light:text-slate-700 font-medium">Conversational UI</span>
+                            <span class="px-2.5 py-1 rounded-lg bg-slate-800 light:bg-slate-200 text-xs text-slate-300 light:text-slate-700 font-medium">AI Workflow</span>
+                        </div>
+                        <button onclick="openModal('Website Gemini', 'AI / Tools & Productivity', 'Google Gemini AI, Conversational Interface, Multimodal UI', 'Eksplorasi antarmuka conversational AI dan integrasi ekosistem Google Gemini untuk efisiensi alur kerja desain, pencarian inspirasi visual, serta sintesis ide produk digital secara cepat.', ['Integrasi Conversational AI & Multimodal Workflows', 'Ekosistem Google Gemini untuk Brainstorming Ide Visual', 'Optimasi Prompting & Alur Kerja Produktivitas Desain', 'Eksplorasi Antarmuka UI Chatbot Interaktif Modern'], 'https://gemini.google.com', 'Buka Website Gemini')" class="w-full py-3 rounded-xl bg-gradient-to-r from-cyan-600 to-blue-600 hover:from-cyan-500 hover:to-blue-500 text-white font-semibold text-sm transition-all flex items-center justify-center gap-2 shadow-lg shadow-cyan-600/20">
+                            <span>Buka Website Gemini</span>
+                            <i class="fa-solid fa-arrow-up-right-from-square text-xs"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- PROYEK AI / TOOLS 2: Website Claude -->
+                <div class="project-card glass rounded-3xl overflow-hidden border border-amber-500/40 light:border-amber-300 transition-all hover:-translate-y-2 group" data-category="aitools">
+                    <div class="relative h-52 bg-gradient-to-b from-amber-950/80 via-slate-900 to-slate-900 overflow-hidden flex items-center justify-center p-4">
+                        <div class="absolute inset-0 bg-gradient-to-tr from-amber-600/30 via-orange-600/30 to-transparent opacity-80 group-hover:scale-110 transition-transform duration-500"></div>
+                        
+                        <div class="relative z-10 text-center">
+                            <!-- Official Anthropic Claude Terracotta Asterisk Logo -->
+                            <svg class="w-16 h-16 mx-auto mb-2 drop-shadow-xl group-hover:scale-110 transition-transform" viewBox="0 0 100 100" fill="#D16A46" xmlns="http://www.w3.org/2000/svg">
+                                <g transform="translate(50,50)">
+                                    <rect x="-4.5" y="-42" width="9" height="84" rx="4.5" transform="rotate(5)" />
+                                    <rect x="-4" y="-40" width="8" height="80" rx="4" transform="rotate(35)" />
+                                    <rect x="-4.5" y="-43" width="9" height="86" rx="4.5" transform="rotate(65)" />
+                                    <rect x="-4" y="-39" width="8" height="78" rx="4" transform="rotate(95)" />
+                                    <rect x="-4.5" y="-42" width="9" height="84" rx="4.5" transform="rotate(125)" />
+                                    <rect x="-4" y="-41" width="8" height="82" rx="4" transform="rotate(155)" />
+                                </g>
+                            </svg>
+                            <span class="text-xs font-bold text-amber-300 tracking-wider uppercase block">AI & Research • Anthropic</span>
+                        </div>
+                        
+                        <span class="absolute top-4 left-4 px-3 py-1 rounded-full text-[10px] font-extrabold uppercase bg-amber-600 text-white tracking-wider shadow-md">AI / Tools</span>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-white light:text-slate-900 mb-2 group-hover:text-amber-400 transition-colors">Website Claude</h3>
+                        <p class="text-sm text-slate-400 light:text-slate-600 mb-4 line-clamp-2">Implementasi UI/UX interaktif berbasis Anthropic Claude AI untuk analisis teks, penulisan kreatif, dan riset desain modern.</p>
+                        <div class="flex flex-wrap gap-2 mb-6">
+                            <span class="px-2.5 py-1 rounded-lg bg-amber-500/10 border border-amber-500/30 text-xs text-amber-400 font-medium">Claude AI</span>
+                            <span class="px-2.5 py-1 rounded-lg bg-slate-800 light:bg-slate-200 text-xs text-slate-300 light:text-slate-700 font-medium">UX Copywriting</span>
+                            <span class="px-2.5 py-1 rounded-lg bg-slate-800 light:bg-slate-200 text-xs text-slate-300 light:text-slate-700 font-medium">AI Research</span>
+                        </div>
+                        <button onclick="openModal('Website Claude', 'AI / Tools & Research', 'Anthropic Claude AI, Text Analysis, Creative Writing', 'Implementasi UI/UX interaktif berbasis Anthropic Claude AI untuk analisis teks mendalam, penulisan UX copywriting yang kontekstual, serta sintesis riset desain produk modern.', ['Antarmuka Minimalis dengan Fokus Pengalaman Pengguna (UX)', 'Riset Penulisan UX Copywriting & Analisis Konten', 'Eksplorasi Kemampuan Penalaran Tinggi Anthropic Claude', 'Alur Kerja Kreatif untuk Sintesis Ide Produk Digital'], 'https://claude.ai', 'Buka Website Claude')" class="w-full py-3 rounded-xl bg-gradient-to-r from-amber-600 to-orange-600 hover:from-amber-500 hover:to-orange-500 text-white font-semibold text-sm transition-all flex items-center justify-center gap-2 shadow-lg shadow-amber-600/20">
+                            <span>Buka Website Claude</span>
+                            <i class="fa-solid fa-arrow-up-right-from-square text-xs"></i>
+                        </button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+
+    <!-- ================= TIMELINE SECTION (PENDIDIKAN & PENGALAMAN) ================= -->
+    <section id="timeline" class="py-24 bg-slate-950 light:bg-slate-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            
+            <div class="text-center max-w-2xl mx-auto mb-16">
+                <h2 class="text-xs font-bold text-fuchsia-400 uppercase tracking-widest mb-2">Jejak Akademis & Karir</h2>
+                <p class="text-3xl sm:text-4xl font-extrabold text-white light:text-slate-900">Riwayat Pendidikan & Pengalaman</p>
+                <div class="w-16 h-1 bg-gradient-to-r from-violet-500 to-fuchsia-500 mx-auto mt-4 rounded-full"></div>
+            </div>
+
+            <div class="max-w-4xl mx-auto relative border-l-2 border-slate-800 light:border-slate-300 ml-4 sm:ml-32 space-y-12">
+                
+                <!-- Timeline Item 1: Pendidikan Tinggi (Semester 5) -->
+                <div class="relative pl-8 sm:pl-10">
+                    <div class="absolute -left-[17px] top-1.5 w-8 h-8 rounded-full bg-cyan-500 flex items-center justify-center text-white text-sm shadow-lg shadow-cyan-500/40">
+                        <i class="fa-solid fa-graduation-cap"></i>
+                    </div>
+                    <span class="sm:absolute sm:-left-32 sm:top-1.5 text-xs font-bold text-cyan-400 uppercase tracking-wider block mb-1 sm:mb-0">2024 - Sekarang</span>
+                    <div class="glass p-6 rounded-2xl border border-slate-800 light:border-slate-200">
+                        <div class="flex items-center gap-2 mb-1">
+                            <span class="px-2.5 py-0.5 rounded-full bg-cyan-500/20 text-cyan-300 text-[10px] font-bold uppercase">Perguruan Tinggi</span>
+                            <span class="px-2.5 py-0.5 rounded-full bg-emerald-500/20 text-emerald-300 text-[10px] font-bold uppercase">Semester 5</span>
+                        </div>
+                        <h3 class="text-lg font-bold text-white light:text-slate-900">Mahasiswa Ilmu Komputer</h3>
+                        <p class="text-xs text-violet-400 font-semibold mb-2">Universitas Muhammadiyah Bangka Belitung</p>
+                        <p class="text-sm text-slate-400 light:text-slate-600 leading-relaxed">
+                            Aktif menempuh studi Ilmu Komputer semester 5. Berfokus pada rekayasa perangkat lunak, teknologi pemrograman web, riset Interaksi Manusia & Komputer (HCI), serta perancangan solusi digital yang fungsional dan intuitif.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Timeline Item 2: Pendidikan SMK (DKV) -->
+                <div class="relative pl-8 sm:pl-10">
+                    <div class="absolute -left-[17px] top-1.5 w-8 h-8 rounded-full bg-fuchsia-600 flex items-center justify-center text-white text-sm shadow-lg shadow-fuchsia-500/40">
+                        <i class="fa-solid fa-school"></i>
+                    </div>
+                    <span class="sm:absolute sm:-left-32 sm:top-1.5 text-xs font-bold text-fuchsia-400 uppercase tracking-wider block mb-1 sm:mb-0">2021 - 2024</span>
+                    <div class="glass p-6 rounded-2xl border border-slate-800 light:border-slate-200">
+                        <div class="flex items-center gap-2 mb-1">
+                            <span class="px-2.5 py-0.5 rounded-full bg-fuchsia-500/20 text-fuchsia-300 text-[10px] font-bold uppercase">Sekolah Menengah Kejuruan</span>
+                        </div>
+                        <h3 class="text-lg font-bold text-white light:text-slate-900">Desain Komunikasi Visual (DKV)</h3>
+                        <p class="text-xs text-fuchsia-400 font-semibold mb-2">SMKN 2 Pangkalpinang</p>
+                        <p class="text-sm text-slate-400 light:text-slate-600 leading-relaxed">
+                            Mempelajari fondasi desain grafis, ilustrasi vektor, komposisi warna, hirarki tipografi, identitas merek (branding), tata letak publikasi, hingga teknik produksi media visual secara profesional.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Timeline Item 3: Pengalaman Profesional Freelance -->
+                <div class="relative pl-8 sm:pl-10">
+                    <div class="absolute -left-[17px] top-1.5 w-8 h-8 rounded-full bg-violet-600 flex items-center justify-center text-white text-sm shadow-lg shadow-violet-500/40">
+                        <i class="fa-solid fa-briefcase"></i>
+                    </div>
+                    <span class="sm:absolute sm:-left-32 sm:top-1.5 text-xs font-bold text-violet-400 uppercase tracking-wider block mb-1 sm:mb-0">Pengalaman</span>
+                    <div class="glass p-6 rounded-2xl border border-slate-800 light:border-slate-200">
+                        <h3 class="text-lg font-bold text-white light:text-slate-900">Digital Product & UI/UX Designer</h3>
+                        <p class="text-xs text-violet-400 font-semibold mb-2">Freelance / Remote Project • @to.pjxr</p>
+                        <p class="text-sm text-slate-400 light:text-slate-600 leading-relaxed">
+                            Merancang antarmuka produk digital, *design system*, aset pemasaran visual, prototipe aplikasi streaming, serta tata letak identitas visual untuk berbagai kebutuhan individu dan organisasi.
+                        </p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+
+    <!-- ================= CONTACT SECTION ================= -->
+    <section id="contact" class="py-24 bg-slate-900/60 light:bg-slate-100 relative border-t border-slate-800/80 light:border-slate-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            
+            <!-- Section Header: "Contact to:" -->
+            <div class="text-center max-w-2xl mx-auto mb-16">
+                <h2 class="text-xs font-bold text-fuchsia-400 uppercase tracking-widest mb-2">Mari Berkolaborasi</h2>
+                <p class="text-4xl sm:text-5xl font-black text-white light:text-slate-900 bg-gradient-to-r from-violet-400 via-fuchsia-400 to-cyan-400 bg-clip-text text-transparent">Contact to:</p>
+                <div class="w-16 h-1 bg-gradient-to-r from-violet-500 to-fuchsia-500 mx-auto mt-4 rounded-full"></div>
+            </div>
+
+            <div class="grid lg:grid-cols-12 gap-12">
+                
+                <!-- Contact Details -->
+                <div class="lg:col-span-5 space-y-6">
+                    <h3 class="text-2xl font-bold text-white light:text-slate-900">Diskusi Proyek Baru</h3>
+                    <p class="text-slate-400 light:text-slate-600 leading-relaxed">
+                        Punya ide produk digital, butuh perancangan UI/UX, atau ingin berkolaborasi? Hubungi saya langsung melalui WhatsApp atau email di bawah ini.
+                    </p>
+
+                    <div class="space-y-4 pt-2">
+                        <!-- WhatsApp Direct Card -->
+                        <a href="https://wa.me/628315144101" target="_blank" class="glass p-4 rounded-2xl flex items-center gap-4 border border-slate-800 light:border-slate-200 hover:border-emerald-500/50 transition-all group">
+                            <div class="w-12 h-12 rounded-xl bg-emerald-500/20 text-emerald-400 flex items-center justify-center text-xl group-hover:scale-110 transition-transform">
+                                <i class="fa-brands fa-whatsapp"></i>
+                            </div>
+                            <div>
+                                <p class="text-xs text-slate-400 light:text-slate-500 font-bold uppercase">WhatsApp Direct</p>
+                                <p class="text-base font-bold text-emerald-400 group-hover:underline">+62 831 514 4101 • @to.pjxr</p>
+                            </div>
+                        </a>
+
+                        <!-- Main Email: gnzjarr@gmail.com -->
+                        <a href="mailto:gnzjarr@gmail.com" class="glass p-4 rounded-2xl flex items-center gap-4 border border-slate-800 light:border-slate-200 hover:border-violet-500/50 transition-all group">
+                            <div class="w-12 h-12 rounded-xl bg-violet-500/20 text-violet-400 flex items-center justify-center text-xl group-hover:scale-110 transition-transform">
+                                <i class="fa-regular fa-envelope"></i>
+                            </div>
+                            <div>
+                                <p class="text-xs text-slate-400 light:text-slate-500 font-bold uppercase">Email Utama</p>
+                                <p class="text-base font-bold text-white light:text-slate-800 group-hover:text-violet-400 transition-colors">gnzjarr@gmail.com</p>
+                            </div>
+                        </a>
+
+                        <!-- Instagram Direct -->
+                        <a href="https://instagram.com/to.pjxr" target="_blank" class="glass p-4 rounded-2xl flex items-center gap-4 border border-slate-800 light:border-slate-200 hover:border-fuchsia-500/50 transition-all group">
+                            <div class="w-12 h-12 rounded-xl bg-fuchsia-500/20 text-fuchsia-400 flex items-center justify-center text-xl group-hover:scale-110 transition-transform">
+                                <i class="fa-brands fa-instagram"></i>
+                            </div>
+                            <div>
+                                <p class="text-xs text-slate-400 light:text-slate-500 font-bold uppercase">Instagram Direct</p>
+                                <p class="text-base font-bold text-white light:text-slate-800 group-hover:text-fuchsia-400 transition-colors">@to.pjxr</p>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Contact Form -->
+                <div class="lg:col-span-7">
+                    <form id="contact-form" onsubmit="handleFormSubmit(event)" class="glass p-8 sm:p-10 rounded-3xl border border-slate-800 light:border-slate-200 space-y-6">
+                        <div class="grid sm:grid-cols-2 gap-6">
+                            <div>
+                                <label for="name" class="block text-xs font-bold uppercase text-slate-300 light:text-slate-700 mb-2">Nama Lengkap *</label>
+                                <input type="text" id="name" required placeholder="Masukkan nama Anda" class="w-full px-4 py-3.5 rounded-xl bg-slate-900/90 light:bg-slate-100 border border-slate-700/80 light:border-slate-300 text-white light:text-slate-900 focus:outline-none focus:border-violet-500 transition-colors">
+                            </div>
+
+                            <div>
+                                <label for="email" class="block text-xs font-bold uppercase text-slate-300 light:text-slate-700 mb-2">Alamat Email *</label>
+                                <input type="email" id="email" required placeholder="nama@email.com" class="w-full px-4 py-3.5 rounded-xl bg-slate-900/90 light:bg-slate-100 border border-slate-700/80 light:border-slate-300 text-white light:text-slate-900 focus:outline-none focus:border-violet-500 transition-colors">
+                            </div>
+                        </div>
+
+                        <div>
+                            <label for="subject" class="block text-xs font-bold uppercase text-slate-300 light:text-slate-700 mb-2">Subjek Proyek *</label>
+                            <input type="text" id="subject" required placeholder="Misal: Desain ID Card & UI/UX Design" class="w-full px-4 py-3.5 rounded-xl bg-slate-900/90 light:bg-slate-100 border border-slate-700/80 light:border-slate-300 text-white light:text-slate-900 focus:outline-none focus:border-violet-500 transition-colors">
+                        </div>
+
+                        <div>
+                            <label for="message" class="block text-xs font-bold uppercase text-slate-300 light:text-slate-700 mb-2">Pesan & Detail *</label>
+                            <textarea id="message" rows="4" required placeholder="Tuliskan detail proyek atau pertanyaan Anda di sini..." class="w-full px-4 py-3.5 rounded-xl bg-slate-900/90 light:bg-slate-100 border border-slate-700/80 light:border-slate-300 text-white light:text-slate-900 focus:outline-none focus:border-violet-500 transition-colors"></textarea>
+                        </div>
+
+                        <button type="submit" class="w-full py-4 rounded-xl text-white font-extrabold bg-gradient-to-r from-violet-600 via-fuchsia-600 to-violet-600 hover:from-violet-500 hover:to-fuchsia-500 shadow-xl shadow-violet-500/25 transition-all hover:-translate-y-0.5 flex items-center justify-center gap-2">
+                            <i class="fa-regular fa-paper-plane"></i>
+                            <span>Kirim Pesan ke gnzjarr@gmail.com</span>
+                        </button>
+                    </form>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+
+    <!-- ================= FOOTER ================= -->
+    <footer class="mt-auto py-10 bg-slate-950 light:bg-slate-100 border-t border-slate-800/80 light:border-slate-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col sm:flex-row items-center justify-between gap-6 text-center sm:text-left">
+                
+                <div>
+                    <a href="#home" class="text-lg font-black bg-gradient-to-r from-violet-400 via-fuchsia-400 to-cyan-400 bg-clip-text text-transparent">Fajar.Des</a>
+                    <p class="text-xs text-slate-400 light:text-slate-600 mt-1">Mendesain Semua Solusi Digital • @to.pjxr</p>
+                </div>
+
+                <!-- Footer Social Media Links: Strictly WA, IG, Gmail -->
+                <div class="flex items-center gap-4">
+                    <a href="https://wa.me/628315144101" target="_blank" class="w-9 h-9 rounded-xl glass flex items-center justify-center text-slate-400 hover:text-emerald-400 transition-colors" aria-label="WhatsApp">
+                        <i class="fa-brands fa-whatsapp text-base"></i>
+                    </a>
+                    <a href="https://instagram.com/to.pjxr" target="_blank" class="w-9 h-9 rounded-xl glass flex items-center justify-center text-slate-400 hover:text-fuchsia-400 transition-colors" aria-label="Instagram">
+                        <i class="fa-brands fa-instagram text-base"></i>
+                    </a>
+                    <a href="mailto:gnzjarr@gmail.com" class="w-9 h-9 rounded-xl glass flex items-center justify-center text-slate-400 hover:text-violet-400 transition-colors" aria-label="Gmail">
+                        <i class="fa-regular fa-envelope text-base"></i>
+                    </a>
+                </div>
+
+                <p class="text-xs text-slate-400 light:text-slate-600">
+                    &copy; 2026 <strong class="text-slate-300 light:text-slate-800">Fajar Ramdan Faidillah (@to.pjxr)</strong>. All rights reserved.
+                </p>
+
+                <a href="#home" class="w-10 h-10 rounded-xl glass flex items-center justify-center text-slate-300 hover:text-white hover:bg-violet-600 transition-all" aria-label="Back to Top">
+                    <i class="fa-solid fa-arrow-up text-sm"></i>
+                </a>
+
+            </div>
+        </div>
+    </footer>
+
+
+    <!-- ================= MODAL POPUP ================= -->
+    <div id="project-modal" class="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-950/80 backdrop-blur-md hidden opacity-0 transition-opacity duration-300">
+        <div class="relative w-full max-w-2xl glass p-6 sm:p-8 rounded-3xl border border-slate-700 light:border-slate-200 shadow-2xl max-h-[90vh] overflow-y-auto">
+            
+            <button onclick="closeModal()" class="absolute top-5 right-5 w-10 h-10 rounded-xl bg-slate-800 hover:bg-slate-700 text-slate-300 hover:text-white flex items-center justify-center transition-colors">
+                <i class="fa-solid fa-xmark text-lg"></i>
+            </button>
+
+            <span id="modal-category" class="inline-block px-3 py-1 rounded-full text-[10px] font-extrabold uppercase bg-violet-500/80 text-white tracking-wider mb-3">
+                UI/UX
+            </span>
+
+            <h3 id="modal-title" class="text-2xl font-bold text-white light:text-slate-900 mb-2">Title</h3>
+            
+            <div class="text-xs text-violet-400 font-semibold mb-4" id="modal-tools">Tools</div>
+
+            <p id="modal-description" class="text-sm text-slate-300 light:text-slate-600 mb-6 leading-relaxed">Description</p>
+
+            <h4 class="text-sm font-bold text-white light:text-slate-800 mb-3 uppercase tracking-wider">Fitur Utama Desain:</h4>
+            <ul id="modal-features" class="space-y-2 mb-8 text-sm text-slate-300 light:text-slate-600">
+                <!-- Dynamic Features -->
+            </ul>
+
+            <div class="flex flex-wrap gap-3">
+                <button id="modal-action-btn" class="flex-1 py-3 rounded-xl bg-gradient-to-r from-violet-600 to-fuchsia-600 text-white font-bold text-sm shadow-lg hover:from-violet-500 hover:to-fuchsia-500 transition-all text-center flex items-center justify-center gap-2">
+                    <span id="modal-btn-text">Pratinjau Karya</span>
+                    <i class="fa-solid fa-arrow-up-right-from-square text-xs"></i>
+                </button>
+                <button onclick="closeModal()" class="px-6 py-3 rounded-xl border border-slate-700 text-slate-300 light:text-slate-700 font-bold text-sm hover:bg-slate-800 transition-all">
+                    Tutup
+                </button>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- ================= TOAST NOTIFICATION ================= -->
+    <div id="toast" class="fixed bottom-6 right-6 z-50 glass px-6 py-4 rounded-2xl border border-violet-500/50 shadow-2xl flex items-center gap-3 transform translate-y-20 opacity-0 transition-all duration-300">
+        <div class="w-8 h-8 rounded-xl bg-emerald-500/20 text-emerald-400 flex items-center justify-center text-sm font-bold">
+            <i class="fa-solid fa-check"></i>
+        </div>
+        <div>
+            <p id="toast-message" class="text-sm font-bold text-white light:text-slate-900">Pesan berhasil dikirim!</p>
+        </div>
+    </div>
+
+
+    <!-- ================= JAVASCRIPT LOGIC ================= -->
+    <script>
+        // --- 1. Theme Toggle (Dark/Light Mode) ---
+        const themeToggleBtn = document.getElementById('theme-toggle');
+        const darkIcon = document.getElementById('theme-toggle-dark-icon');
+        const lightIcon = document.getElementById('theme-toggle-light-icon');
+
+        if (localStorage.getItem('color-theme') === 'light' || (!('color-theme' in localStorage) && window.matchMedia('(prefers-color-scheme: light)').matches)) {
+            document.documentElement.classList.remove('dark');
+            document.documentElement.classList.add('light');
+            lightIcon.classList.add('hidden');
+            darkIcon.classList.remove('hidden');
+        } else {
+            document.documentElement.classList.add('dark');
+            document.documentElement.classList.remove('light');
+            darkIcon.classList.add('hidden');
+            lightIcon.classList.remove('hidden');
+        }
+
+        themeToggleBtn.addEventListener('click', function() {
+            if (document.documentElement.classList.contains('dark')) {
+                document.documentElement.classList.remove('dark');
+                document.documentElement.classList.add('light');
+                localStorage.setItem('color-theme', 'light');
+                darkIcon.classList.remove('hidden');
+                lightIcon.classList.add('hidden');
+            } else {
+                document.documentElement.classList.remove('light');
+                document.documentElement.classList.add('dark');
+                localStorage.setItem('color-theme', 'dark');
+                lightIcon.classList.remove('hidden');
+                darkIcon.classList.add('hidden');
+            }
+        });
+
+        // --- 2. Mobile Menu Toggle ---
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const mobileNavLinks = document.querySelectorAll('.mobile-nav-link');
+
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        mobileNavLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+            });
+        });
+
+        // --- 3. Typing Effect ---
+        const typingText = document.getElementById('typing-text');
+        const roles = ['UI/UX Designer', 'Web Designer', 'Product Designer', 'Graphic Designer'];
+        let roleIndex = 0;
+        let charIndex = 0;
+        let isDeleting = false;
+
+        function type() {
+            const currentRole = roles[roleIndex];
+            
+            if (isDeleting) {
+                typingText.textContent = currentRole.substring(0, charIndex - 1);
+                charIndex--;
+            } else {
+                typingText.textContent = currentRole.substring(0, charIndex + 1);
+                charIndex++;
+            }
+
+            if (!isDeleting && charIndex === currentRole.length) {
+                isDeleting = true;
+                setTimeout(type, 2000);
+            } else if (isDeleting && charIndex === 0) {
+                isDeleting = false;
+                roleIndex = (roleIndex + 1) % roles.length;
+                setTimeout(type, 500);
+            } else {
+                setTimeout(type, isDeleting ? 50 : 100);
+            }
+        }
+        type();
+
+        // --- 4. Count-Up Stats Counter on Scroll ---
+        let animatedStats = false;
+        function animateValue(id, start, end, duration, suffix = '') {
+            const obj = document.getElementById(id);
+            if (!obj) return;
+            let startTimestamp = null;
+            const step = (timestamp) => {
+                if (!startTimestamp) startTimestamp = timestamp;
+                const progress = Math.min((timestamp - startTimestamp) / duration, 1);
+                const currentVal = Math.floor(progress * (end - start) + start);
+                obj.innerHTML = currentVal + suffix;
+                if (progress < 1) {
+                    window.requestAnimationFrame(step);
+                }
+            };
+            window.requestAnimationFrame(step);
+        }
+
+        const statsSection = document.getElementById('about');
+        window.addEventListener('scroll', () => {
+            if (!statsSection) return;
+            const rect = statsSection.getBoundingClientRect();
+            if (rect.top <= window.innerHeight && !animatedStats) {
+                animatedStats = true;
+                animateValue('stat-exp', 0, 2, 1500, '+');
+                animateValue('stat-projects', 0, 10, 2000, '+');
+                animateValue('stat-satisfaction', 0, 100, 2000, '%');
+            }
+        });
+
+        // --- 5. Skill Progress Bar Fill Animation ---
+        let animatedSkills = false;
+        const skillsSection = document.getElementById('skills');
+        window.addEventListener('scroll', () => {
+            if (!skillsSection) return;
+            const rect = skillsSection.getBoundingClientRect();
+            if (rect.top <= window.innerHeight && !animatedSkills) {
+                animatedSkills = true;
+                document.querySelectorAll('.skill-bar').forEach(bar => {
+                    const targetProgress = bar.getAttribute('data-progress');
+                    bar.style.transition = 'width 1.5s ease-in-out';
+                    bar.style.width = targetProgress;
+                });
+            }
+        });
+
+        // --- 6. Portfolio Category Filter ---
+        const filterBtns = document.querySelectorAll('.filter-btn');
+        const projectCards = document.querySelectorAll('.project-card');
+
+        filterBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                // Reset all filter buttons
+                filterBtns.forEach(b => {
+                    b.classList.remove('bg-gradient-to-r', 'from-violet-600', 'via-fuchsia-600', 'to-violet-600', 'text-white', 'shadow-lg', 'shadow-violet-500/40');
+                    b.classList.add('bg-slate-900/90', 'light:bg-slate-200', 'text-slate-100', 'light:text-slate-800', 'border', 'border-slate-700/60', 'light:border-slate-300');
+                });
+
+                // Highlight clicked filter button
+                btn.classList.remove('bg-slate-900/90', 'light:bg-slate-200', 'text-slate-100', 'light:text-slate-800', 'border', 'border-slate-700/60', 'light:border-slate-300');
+                btn.classList.add('bg-gradient-to-r', 'from-violet-600', 'via-fuchsia-600', 'to-violet-600', 'text-white', 'shadow-lg', 'shadow-violet-500/40');
+
+                const filter = btn.getAttribute('data-filter');
+
+                projectCards.forEach(card => {
+                    if (filter === 'all' || card.getAttribute('data-category') === filter) {
+                        card.style.display = 'block';
+                    } else {
+                        card.style.display = 'none';
+                    }
+                });
+            });
+        });
+
+        // --- 7. Modal Popup Controller ---
+        const modal = document.getElementById('project-modal');
+        function openModal(title, category, tools, description, features, externalLink = null, customBtnLabel = null) {
+            document.getElementById('modal-title').textContent = title;
+            document.getElementById('modal-category').textContent = category;
+            document.getElementById('modal-tools').textContent = 'Design Tools: ' + tools;
+            document.getElementById('modal-description').textContent = description;
+
+            const featuresList = document.getElementById('modal-features');
+            featuresList.innerHTML = '';
+            features.forEach(feat => {
+                const li = document.createElement('li');
+                li.className = 'flex items-center gap-2';
+                li.innerHTML = `<i class="fa-solid fa-circle-check text-emerald-400 text-xs"></i> <span>${feat}</span>`;
+                featuresList.appendChild(li);
+            });
+
+            const actionBtn = document.getElementById('modal-action-btn');
+            const btnText = document.getElementById('modal-btn-text');
+
+            if (externalLink) {
+                if (customBtnLabel) {
+                    btnText.textContent = customBtnLabel;
+                } else if (externalLink.includes('figma.com')) {
+                    btnText.textContent = 'Buka Desain di Figma';
+                } else {
+                    btnText.textContent = 'Buka Desain di Canva';
+                }
+                actionBtn.onclick = () => {
+                    window.open(externalLink, '_blank');
+                };
+            } else {
+                btnText.textContent = 'Pratinjau Karya';
+                actionBtn.onclick = () => {
+                    closeModal();
+                    showToast('Membuka pratinjau karya...');
+                };
+            }
+
+            modal.classList.remove('hidden');
+            setTimeout(() => {
+                modal.classList.remove('opacity-0');
+            }, 10);
+        }
+
+        function closeModal() {
+            modal.classList.add('opacity-0');
+            setTimeout(() => {
+                modal.classList.add('hidden');
+            }, 300);
+        }
+
+        modal.addEventListener('click', (e) => {
+            if (e.target === modal) closeModal();
+        });
+
+        // --- 8. Toast Notification & Form Submit Handling ---
+        function showToast(message) {
+            const toast = document.getElementById('toast');
+            document.getElementById('toast-message').textContent = message;
+            toast.classList.remove('translate-y-20', 'opacity-0');
+            setTimeout(() => {
+                toast.classList.add('translate-y-20', 'opacity-0');
+            }, 3500);
+        }
+
+        function handleFormSubmit(e) {
+            e.preventDefault();
+            showToast('Pesan berhasil dikirim ke gnzjarr@gmail.com!');
+            document.getElementById('contact-form').reset();
+        }
+    </script>
+</body>
+</html>
